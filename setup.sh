@@ -47,4 +47,5 @@ else
     ssh 172.20.0.101 grctl node add --host $1 --iip $2 --root-pass vagrant --role compute
     uid=$(ssh 172.20.0.101 grctl node list | grep $2 | awk '{print $2}')
     ssh 172.20.0.101 grctl node install $uid
+    ssh 172.20.0.101 grctl node up $uid
 fi
