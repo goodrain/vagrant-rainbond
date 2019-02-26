@@ -7,11 +7,10 @@ Vagrant.configure("2") do |config|
    vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000 ]
   end  
   config.vm.synced_folder ".", "/grdata/services/offline", type: "nfs", nfs_udp: false
-  $num_instances = 3
+  $num_instances = 1
   (1..$num_instances).each do |i|
     config.vm.define "rainbond#{i}" do |node|
       node.vm.box = "ysicing/debian"
-      # node.vm.box_version = "9.7.0.1549265671"
       node.vm.hostname = "rainbond#{i}"
       ip = "172.20.0.#{i+100}"
       node.vm.network "private_network", ip: ip
@@ -25,7 +24,6 @@ Vagrant.configure("2") do |config|
         # cpu 使用率50%
         vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
       end
-      #node.vm.provision "shell", inline: "echo Hello, World"
       node.vm.provision "shell", path: "install.sh", args: [i, ip]
     end
   end

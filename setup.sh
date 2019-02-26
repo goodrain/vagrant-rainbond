@@ -31,7 +31,7 @@ chmod +x /vagrant/grctl
 
 if [ "$1" == 1 ];then
     echo "start init node"
-    /vagrant/grctl init --iip $2 --role manage --rainbond-version devel --rainbond-repo https://github.com/ysicing/rainbond-ansible.git
+    /vagrant/grctl init --iip $2 --rainbond-version devel
 else
     echo "start join node"
     expect -c "
