@@ -31,7 +31,7 @@ chmod +x /vagrant/grctl
 
 if [ "$1" == 1 ];then
     echo "start init node"
-    /vagrant/grctl init --iip $2 --rainbond-version devel
+    /vagrant/grctl init --iip $2 --rainbond-version devel --domain dev.grapps.cn
 else
     echo "start join node"
     expect -c "
