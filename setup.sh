@@ -25,7 +25,7 @@ sed -i -e 's/^PasswordAuthentication no/#PasswordAuthentication no/g' /etc/ssh/s
 
 systemctl restart sshd
 
-[ ! -f "/vagrant/grctl" ] && wget https://pkg.rainbond.com/releases/common/v5.0/grctl -O /vagrant/grctl
+[ ! -f "/vagrant/grctl" ] && wget https://pkg.rainbond.com/releases/common/v5.1/grctl -O /vagrant/grctl
 
 chmod +x /vagrant/grctl
 
