@@ -9,16 +9,17 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/grdata/services/offline", type: "nfs", nfs_udp: false
   $num_instances = 1
   (1..$num_instances).each do |i|
-    config.vm.define "rainbond#{i}" do |node|
-      node.vm.box = "ysicing/debian"
-      node.vm.hostname = "rainbond#{i}"
+    config.vm.define "r6dcentos#{i}" do |node|
+      node.vm.box = "centos/7"
+      # node.disksize.size = '50GB'
+      node.vm.hostname = "r6dcentos#{i}"
       ip = "172.20.0.#{i+100}"
       node.vm.network "private_network", ip: ip
       node.vm.provider "virtualbox" do |vb|
         vb.gui = false
         vb.memory = "4096"
         vb.cpus = 2
-        vb.name = "rainbond#{i}"
+        vb.name = "r6dcentos#{i}"
         vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
         vb.customize ["modifyvm", :id, "--ioapic", "on"]
         # cpu 使用率50%
