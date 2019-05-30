@@ -18,13 +18,13 @@ VBoxManage: 6.0.4r128413
 
 ### 配置
 
-默认配置2核4G,CPU使用率50%,可以根据物理机适当调高配置
+默认配置3核5120MB,CPU使用率50%,可以根据物理机适当调高配置
 
 ### 单节点
 
 ```
 git clone https://github.com/goodrain/vagrant-rainbond.git
-cd vagrant-rainbond
+cd vagrant-rainbond/debian
 vagrant up
 # 单节点ip
 172.20.0.101
