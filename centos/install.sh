@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ln -s /grdata/services/offline /vagrant
+ln -s /opt/rainbond/offline /vagrant
 
 [ -f "/vagrant/install.sh" ] && (
     /vagrant/setup.sh $1 $2
