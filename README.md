@@ -22,13 +22,5 @@ VBoxManage: 6.0.4r128413
 
 ### 单节点
 
-```
-git clone https://github.com/goodrain/vagrant-rainbond.git
-cd vagrant-rainbond/debian
-vagrant up
-# 单节点ip
-172.20.0.101
-# 管理员
-root/vagrant
-```
+``'
 
